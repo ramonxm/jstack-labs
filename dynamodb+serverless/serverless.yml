@@ -29,6 +29,30 @@ functions:
       - httpApi:
           path: /products
           method: GET
+  getProduct:
+    handler: src/functions/getProduct.handler
+    events:
+      - httpApi:
+          path: /products/{productId}
+          method: GET
+  createProduct:
+    handler: src/functions/createProduct.handler
+    events:
+      - httpApi:
+          path: /products
+          method: POST
+  updateProduct:
+    handler: src/functions/updateProduct.handler
+    events:
+      - httpApi:
+          path: /products/{productId}
+          method: PUT
+  deleteProduct:
+    handler: src/functions/deleteProduct.handler
+    events:
+      - httpApi:
+          path: /products/{productId}
+          method: DELETE
 
 resources:
   Resources:
