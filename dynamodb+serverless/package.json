@@ -9,7 +9,9 @@
   "engines": {
     "node": ">=14.15.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.515.0"
+  },
   "devDependencies": {
     "@serverless/typescript": "^3.38.0",
     "@types/aws-lambda": "^8.10.133",

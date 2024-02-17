@@ -1,0 +1,22 @@
+@host = https://jjvlkr6woj.execute-api.us-east-1.amazonaws.com
+
+###
+GET  {{host}}/products
+
+###
+GET  {{host}}/products/{productId}
+
+###
+POST  {{host}}/products
+Content-Type: application/json
+
+{
+  "name": "Moletom Jstack",
+  "price": 189.9,
+  "tags": ["moleta", "zica do baile"]
+}
+###
+PUT  {{host}}/products/{productId}
+
+###
+DELETE  {{host}}/products/{productId}
