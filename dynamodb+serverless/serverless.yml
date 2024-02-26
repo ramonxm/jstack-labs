@@ -18,7 +18,7 @@ provider:
             - dynamodb:Scan
             - dynamodb:UpdateItem
           Resource:
-            - !GetAtt ProductsTable.arn
+            - !GetAtt ProductsTable.Arn
 
 package:
   individually: true
