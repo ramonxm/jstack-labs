@@ -4,7 +4,7 @@
 GET  {{host}}/products
 
 ###
-GET  {{host}}/products/{productId}
+GET  {{host}}/products/0ff5dce8-3a05-430f-8b76-967252965d0b
 
 ###
 POST  {{host}}/products
@@ -19,4 +19,4 @@ Content-Type: application/json
 PUT  {{host}}/products/{productId}
 
 ###
-DELETE  {{host}}/products/{productId}
+DELETE  {{host}}/products/0ff5dce8-3a05-430f-8b76-967252965d0b
