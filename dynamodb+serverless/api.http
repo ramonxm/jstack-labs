@@ -11,9 +11,9 @@ POST  {{host}}/products
 Content-Type: application/json
 
 {
-  "name": "Moletom Jstack",
-  "price": 189.9,
-  "tags": ["moleta", "zica do baile"]
+  "name": "Camiseta NodeJS",
+  "price": 129.99,
+  "tags": ["backend", "runtime"]
 }
 ###
 PUT  {{host}}/products/{productId}
