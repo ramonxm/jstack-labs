@@ -10,6 +10,7 @@ function Dashboard() {
   const auth = useAuth();
 
   const handleLogout = () => {
+    auth.signOut();
     navigate({ to: "/" });
   };
 
