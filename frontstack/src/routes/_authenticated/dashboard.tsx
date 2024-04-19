@@ -1,21 +1,7 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useAuth } from "@app/contexts/AuthContext";
-import {
-  createLazyFileRoute,
-  redirect,
-  useNavigate,
-} from "@tanstack/react-router";
 
-export const Route = createLazyFileRoute("/dashboard")({
-  beforeLoad: ({ context, location }) => {
-    if (!context.auth.isAuthenticated) {
-      throw redirect({
-        to: "/",
-        search: {
-          redirect: location.href,
-        },
-      });
-    }
-  },
+export const Route = createFileRoute("/_authenticated/dashboard")({
   component: Dashboard,
 });
 
