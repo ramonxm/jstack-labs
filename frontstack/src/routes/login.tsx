@@ -1,4 +1,4 @@
-import { isAuthenticated, signOut, signIn } from "@app/utils/auth";
+import { useAuth } from "@app/hooks/useAuth";
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/login")({
@@ -7,11 +7,12 @@ export const Route = createFileRoute("/login")({
 
 function Login() {
   const router = useRouter();
+  const { isLogged, signIn, signOut } = useAuth();
 
   return (
     <>
       <h2>Login</h2>
-      {isAuthenticated() ? (
+      {isLogged() ? (
         <>
           <p>Hello user!</p>
           <button

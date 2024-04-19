@@ -1,29 +1,27 @@
-import * as React from "react";
+import { createContext, ReactNode } from "react";
 
-export interface AuthContext {
-  isAuthenticated: boolean;
-  setUser: (username: string | null) => void;
-  user: string | null;
+export interface IAuthContext {
+  signIn: () => void;
+  signOut: () => void;
+  isLogged: () => boolean;
 }
 
-const AuthContext = React.createContext<AuthContext | null>(null);
+export const AuthContext = createContext<IAuthContext | null>(null);
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = React.useState<string | null>(null);
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const signIn = () => {
+    localStorage.setItem("isAuthenticated", "true");
+  };
 
-  const isAuthenticated = !!user;
+  const signOut = () => {
+    localStorage.removeItem("isAuthenticated");
+  };
+
+  const isLogged = () => localStorage.getItem("isAuthenticated") === "true";
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, setUser }}>
+    <AuthContext.Provider value={{ signIn, signOut, isLogged }}>
       {children}
     </AuthContext.Provider>
   );
-}
-
-export function useAuth() {
-  const context = React.useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
-  return context;
 }

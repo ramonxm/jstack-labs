@@ -1,5 +1,5 @@
+import { useAuth } from "@app/hooks/useAuth";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useAuth } from "@app/contexts/AuthContext";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   component: Dashboard,
@@ -10,14 +10,12 @@ function Dashboard() {
   const auth = useAuth();
 
   const handleLogout = () => {
-    auth.setUser(null);
     navigate({ to: "/" });
   };
 
   return (
     <div className="p-2">
       <h3>Dashboard page</h3>
-      <p>Hi {auth.user}!</p>
       <p>If you can see this, that means you are authenticated.</p>
       <div className="mt-4">
         <button
