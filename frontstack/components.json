@@ -12,6 +12,6 @@
   },
   "aliases": {
     "components": "@views/components",
-    "utils": "@app/utils"
+    "utils": "@app/utils/cn"
   }
 }
