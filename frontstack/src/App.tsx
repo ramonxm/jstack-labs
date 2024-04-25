@@ -1,14 +1,14 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom/client";
-import "./views/styles/global.css";
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import './views/styles/global.css';
 
-import { ThemeProvider } from "@app/contexts/ThemeContext";
-import { BrowserRouter, Link } from "react-router-dom";
-import { ThemeSwitcher } from "@views/components/modules/ThemeSwitcher";
-import { routes } from "@app/routes";
-import { Router } from "@app/routes/router";
+import { ThemeProvider } from '@app/contexts/ThemeContext';
+import { BrowserRouter, Link } from 'react-router-dom';
+import { ThemeSwitcher } from '@views/components/modules/ThemeSwitcher';
+import { routes } from '@app/routes';
+import { Router } from '@app/routes/router';
 
-const rootElement = document.getElementById("app")!;
+const rootElement = document.getElementById('app')!;
 
 function App() {
   return (
@@ -30,6 +30,6 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <App />
-    </StrictMode>
+    </StrictMode>,
   );
 }

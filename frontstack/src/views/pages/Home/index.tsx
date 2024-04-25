@@ -1,4 +1,4 @@
-import { Button } from "@views/components/ui/button";
+import { Button } from '@views/components/ui/button';
 
 export const Home = () => {
   return (
