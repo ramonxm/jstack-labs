@@ -2,9 +2,12 @@
   "name": "gcp-functions-files",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "deploy": "gcloud functions deploy myFunctionName --gen2 --region=us-east1 --runtime=nodejs20 --trigger-http --allow-unauthenticated",
+    "dev": "npm run build && npx @google-cloud/functions-framework --target=myFunctionName",
+    "gcp-build": "npm run build"
   },
   "keywords": [],
   "author": "",
